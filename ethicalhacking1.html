@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Hacking Training Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Ethical Hacking Training Platform</h1>
+        <nav>
+            <ul>
+                <li><a href="#admin-dashboard">Admin Dashboard</a></li>
+                <li><a href="#participant-dashboard">Participant Dashboard</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Admin Dashboard -->
+        <section id="admin-dashboard">
+            <h2>Admin Dashboard</h2>
+            <div class="dashboard">
+                <h3>Manage Users</h3>
+                <form id="user-management">
+                    <input type="text" placeholder="User Name" id="user-name" required>
+                    <input type="email" placeholder="User Email" id="user-email" required>
+                    <select id="user-role">
+                        <option value="admin">Admin</option>
+                        <option value="participant">Participant</option>
+                    </select>
+                    <button type="button" onclick="manageUsers()">Add/Update User</button>
+                </form>
+                <div id="user-list">
+                    <!-- User list will populate here -->
+                </div>
+            </div>
+            
+            <div class="dashboard">
+                <h3>Manage Courses</h3>
+                <form id="course-management">
+                    <input type="text" placeholder="Course Title" id="course-title" required>
+                    <textarea placeholder="Course Description" id="course-description"></textarea>
+                    <button type="button" onclick="manageCourses()">Add/Update Course</button>
+                </form>
+                <div id="course-list">
+                    <!-- Course list will populate here -->
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <h3>Manage Labs</h3>
+                <form id="lab-management">
+                    <input type="text" placeholder="Lab Name" id="lab-name" required>
+                    <textarea placeholder="Lab Instructions" id="lab-instructions"></textarea>
+                    <button type="button" onclick="manageLabs()">Add/Update Lab</button>
+                </form>
+                <div id="lab-list">
+                    <!-- Lab list will populate here -->
+                </div>
+            </div>
+
+            <div class="dashboard">
+                <h3>Progress Analysis</h3>
+                <button onclick="analyzeProgress()">View Progress Reports</button>
+                <div id="progress-reports">
+                    <!-- Progress data visualization -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Participant Dashboard -->
+        <section id="participant-dashboard">
+            <h2>Participant Dashboard</h2>
+            <div class="dashboard">
+                <h3>Available Courses</h3>
+                <div id="available-courses">
+                    <!-- Courses will populate here -->
+                </div>
+                <button onclick="viewCourses()">View All Courses</button>
+            </div>
+
+            <div class="dashboard">
+                <h3>Labs</h3>
+                <div id="available-labs">
+                    <!-- Labs will populate here -->
+                </div>
+                <button onclick="startLabs()">Start a Lab</button>
+            </div>
+
+            <div class="dashboard">
+                <h3>Certifications</h3>
+                <div id="certifications">
+                    <!-- Certification exams will populate here -->
+                </div>
+                <button onclick="attemptCertification()">Attempt a Certification</button>
+            </div>
+
+            <div class="dashboard">
+                <h3>Progress Summary</h3>
+                <button onclick="viewProgress()">View Progress</button>
+                <div id="progress-summary">
+                    <!-- Progress summary data -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community">
+            <h2>Community Forum</h2>
+            <textarea id="forum-post" placeholder="Write a post..."></textarea>
+            <button onclick="submitPost()">Submit Post</button>
+            <div id="forum">
+                <!-- Dynamic posts will appear here -->
+            </div>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback">
+            <h2>Submit Feedback</h2>
+            <form id="feedback-form" onsubmit="submitFeedback(event)">
+                <textarea placeholder="Your feedback..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="feedback-list">
+                <!-- Feedback entries will appear here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ethical Hacking Training Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
